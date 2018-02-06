@@ -43,6 +43,14 @@ CMD fpm -s dir -t deb -n poppler -v 0.59.0-trusty -C /tmp/out \
         -d "libxcb.so.1  (>=0)" \
         -d "libz.so.1  (>=0)" \
         -d "linux-vdso.so.1  (>=0)" \
+        -d "libopenjpeg-dev (>=0)" \
+        -d "libopenjpeg2 (>=0)" \
+        -d "libjpeg-dev (>=0)" \
+        -d "fontconfig (>=0)" \
+        -d "libfontconfig1-dev (>=0)" \
+        -d "libjpeg-dev (>=0)" \
+        -d "libopenjpeg-dev (>=0)" \
+        -d "libglib2.0-dev (>=0)" \
         --deb-shlibs \
         usr/local; \
     cp *.deb /out
