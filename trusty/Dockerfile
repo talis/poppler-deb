@@ -16,7 +16,7 @@ RUN mkdir /out; \
     LIBOPENJPEG_LIBS=/usr/lib/x86_64-linux-gnu ./configure; \
     make; \
     make install DESTDIR=/tmp/out
-CMD fpm -s dir -t deb -n poppler -v 0.59.0-trusty -C /tmp/out \
+CMD fpm -s dir -t deb -n poppler -v 0.59.0.1-trusty -C /tmp/out \
         -p poppler_VERSION_ARCH.deb \
         -d "libopenjpeg-dev (>=0)" \
         -d "libopenjpeg2 (>=0)" \
