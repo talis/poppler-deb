@@ -1,0 +1,16 @@
+version: 2
+executorType: machine
+stages:
+  build:
+    workDir: ~/poppler-deb
+    steps:
+      - type: checkout
+      - type: shell
+        name: Build image
+        command: |
+          cd trusty
+          docker-compose build
+          docker-compose run imagemagick
+      - type: shell
+        name: Upload package
+        command: package=`ls ~/poppler-deb/trusty/out/`; aws s3 cp ~/poppler-deb/trusty/out/$package $REPO/$package
