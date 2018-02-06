@@ -15,4 +15,6 @@ stages:
           docker-compose run poppler
       - type: shell
         name: Upload package
-        command: package=`ls ~/poppler-deb/trusty/out/`; aws s3 cp ~/poppler-deb/trusty/out/$package $REPO/$package
+        command: |
+            package=`ls ~/poppler-deb/trusty/out/`
+            aws s3 cp ~/poppler-deb/trusty/out/$package s3://aspire-operations/binaries/aptly/$REPO/$package
